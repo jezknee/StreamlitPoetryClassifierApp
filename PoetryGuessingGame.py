@@ -3,9 +3,9 @@ import pandas as pd
 import random
 import numpy as np
 import tensorflow as tf 
-from tensorflow import keras
+#from tensorflow import keras
 from sklearn.preprocessing import LabelEncoder
-from tensorflow.keras.models import load_model
+#from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing import sequence
 
@@ -15,7 +15,7 @@ max_len = 150
 # Load data once
 @st.cache_data
 def load_data():
-    return pd.read_csv(r'C:\Users\jezkn\Local\Data Science Projects\GutenbergPoetry\gutenburg_validation_st.csv', encoding='utf-8')
+    return pd.read_csv(r'gutenburg_validation_st.csv', encoding='utf-8')
 
 # Cache the model and encoders - this loads them only once!
 @st.cache_resource
@@ -31,7 +31,7 @@ def load_model_and_encoders():
     le.fit(valid_df['Actual Author'])
     
     # Load the model
-    model = tf.keras.models.load_model(r"C:\Users\jezkn\Local\Data Science Projects\GutenbergPoetry\gutenberg_lstm_model_st.keras")
+    model = tf.keras.models.load_model(r"gutenberg_lstm_model_st.keras")
     
     return model, tok, le
 
