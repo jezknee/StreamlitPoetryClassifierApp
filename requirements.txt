@@ -1,6 +1,4 @@
 streamlit
 pandas
 tensorflow
-sklearn.preprocessing
-tensorflow.keras.preprocessing.text
-tensorflow.keras.preprocessing
+scikit-learn
